@@ -8,7 +8,7 @@ COPY go.sum .
 RUN go mod download
 
 COPY . .
-RUN CGO_ENABLED=0 GOOS=linux go build -o bin/app cmd/main.go
+RUN CGO_ENABLED=1 GOOS=linux go build -tags musl -o bin/app cmd/main.go
 
 FROM golang:1.17.1-alpine
 COPY --from=build /go/src/app/bin/app .
