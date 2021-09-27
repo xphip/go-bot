@@ -3,8 +3,8 @@ version: "3"
 services:
   api:
     build:
-      context: services/api/
-      dockerfile: ../../.docker/golang/Dockerfile
+      context: .
+      dockerfile: .docker/golang/Dockerfile
     ports:
       - "${API_PORT}:${API_PORT}"
     image: "bot_api"
