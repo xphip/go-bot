@@ -1,5 +1,7 @@
 FROM golang:1.17.1-alpine AS build
 
+RUN apk add gcc libc-dev
+
 WORKDIR /go/src/app
 
 COPY go.mod .
